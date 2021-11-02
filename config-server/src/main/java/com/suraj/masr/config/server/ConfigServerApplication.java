@@ -6,6 +6,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 @EnableConfigServer
 @SpringBootApplication
+//Centralise config Server
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
