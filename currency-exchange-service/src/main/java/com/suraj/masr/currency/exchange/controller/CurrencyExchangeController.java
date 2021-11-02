@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.suraj.masr.currency.exchange.service.CurrencyExchange;
+import com.suraj.masr.currency.exchange.service.CurrencyExchangeRepository;
 
 @RestController
 @RequestMapping(path = "/currency-exchange")
@@ -18,11 +19,16 @@ public class CurrencyExchangeController {
 	@Autowired
 	private Environment environment;
 	
+	@Autowired
+	private CurrencyExchangeRepository repository;
+	
 	@GetMapping(path = "/{from}/to/{to}")
 	public CurrencyExchange retriveExchangeValue(@PathVariable String from,@PathVariable String to) {
 		String port = environment.getProperty("server.port");
+		CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
+		currencyExchange.setEnv(port);
 //		String env = environment.getProperty("env");
-		return new CurrencyExchange(1000L, from, to, BigDecimal.valueOf(50L),port);
+		return currencyExchange;
 	}
 
 }
