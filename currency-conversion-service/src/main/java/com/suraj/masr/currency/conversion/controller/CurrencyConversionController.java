@@ -54,7 +54,7 @@ public class CurrencyConversionController {
 		String port = environment.getProperty("server.port");
 		return new CurrencyConversion(currencyConversion.getId(), from, to,
 				currencyConversion.getConversionMultiple(), quantity,
-				totalCalculatedAmount, port+" feign-client");
+				totalCalculatedAmount, port+" feign-client /, exchangePort "+currencyConversion.getEnv());
 	}
 
 }
