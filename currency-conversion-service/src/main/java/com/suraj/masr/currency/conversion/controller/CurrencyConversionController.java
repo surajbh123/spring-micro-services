@@ -39,7 +39,7 @@ public class CurrencyConversionController {
 				.getConversionMultiple().multiply(quantity);
 		return new CurrencyConversion(currencyConversion.getId(), from, to,
 				currencyConversion.getConversionMultiple(), quantity,
-				totalCalculatedAmount, port+" rest-template");
+				totalCalculatedAmount, " rest-template "+port);
 	}
 
 	@GetMapping(path = "/feign/from/{from}/to/{to}/quantity/{quantity}")
