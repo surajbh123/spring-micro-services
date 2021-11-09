@@ -51,3 +51,10 @@ Custom Routes
 - http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/from/USD/to/INR/quantity/412
 
 - http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/feign/from/USD/to/INR/quantity/412
+
+
+# Local Url API gateway lowercase
+
+- http://localhost:8765/currency-conversion/currency-conversion/from/USD/to/INR/quantity/412
+
+- http://localhost:8765/currency-conversion/currency-conversion/feign/from/USD/to/INR/quantity/412
